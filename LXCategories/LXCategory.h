@@ -28,7 +28,6 @@
 #import <LXCategory/UIImage+LXAdd.h>
 #import <LXCategory/UIView+LXAdd.h>
 #import <LXCategory/UIImageView+LXAdd.h>
-#import <LXCategory/UITextView+LXAdd.h>
 #import <LXCategory/UILabel+LXAdd.h>
 
 
@@ -52,7 +51,6 @@
 #import "UIImage+LXAdd.h"
 #import "UIView+LXAdd.h"
 #import "UIImageView+LXAdd.h"
-#import "UITextView+LXAdd.h"
 #import "UILabel+LXAdd.h"
 
 #endif
