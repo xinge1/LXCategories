@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
     s.name         = "LXCategories"
-    s.version      = "0.0.2"
+    s.version      = "0.0.3"
     s.ios.deployment_target = '10.0'
     s.summary      = "一个iOS开发常用的分类工具库。"
     s.homepage     = "https://github.com/xinge1/LXCategories"
@@ -21,6 +21,6 @@ Pod::Spec.new do |s|
     s.requires_arc = true
     s.source_files = 'LXCategories/**/*.{h,m}'
     s.public_header_files = 'LXCategories/**/*.{h}'
-    s.frameworks = 'UIKit', 'CoreFoundation'
+    s.frameworks = 'UIKit', 'CoreFoundation' , 'CoreText', 'Accelerate' , 'CommonCrypto'
 
 end

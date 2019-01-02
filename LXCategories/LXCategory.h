@@ -22,7 +22,14 @@
 #import <LXCategory/NSString+LXSize.h>
 #import <LXCategory/NSString+LXCommon.h>
 
+#import <LXCategory/UINavigationBar+LXAdd.h>
+#import <LXCategory/UIButton+LXAdd.h>
+#import <LXCategory/UIColor+LXAdd.h>
+#import <LXCategory/UIImage+LXAdd.h>
 #import <LXCategory/UIView+LXAdd.h>
+#import <LXCategory/UIImageView+LXAdd.h>
+#import <LXCategory/UITextView+LXAdd.h>
+#import <LXCategory/UILabel+LXAdd.h>
 
 
 #else
@@ -39,7 +46,14 @@
 #import "NSString+LXSize.h"
 #import "NSString+LXCommon.h"
 
+#import "UINavigationBar+LXAdd.h"
+#import "UIButton+LXAdd.h"
+#import "UIColor+LXAdd.h"
+#import "UIImage+LXAdd.h"
 #import "UIView+LXAdd.h"
+#import "UIImageView+LXAdd.h"
+#import "UITextView+LXAdd.h"
+#import "UILabel+LXAdd.h"
 
 #endif
 
