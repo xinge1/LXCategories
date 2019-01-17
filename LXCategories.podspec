@@ -9,8 +9,8 @@
 Pod::Spec.new do |s|
 
     s.name         = "LXCategories"
-    s.version      = "0.0.5"
-    s.ios.deployment_target = '10.0'
+    s.version      = "0.0.6"
+    s.ios.deployment_target = '8.0'
     s.summary      = "一个iOS开发常用的分类工具库。"
     s.homepage     = "https://github.com/xinge1/LXCategories"
     s.social_media_url = 'https://github.com/xinge1/LXCategories'
