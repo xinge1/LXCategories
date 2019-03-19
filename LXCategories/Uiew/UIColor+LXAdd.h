@@ -14,6 +14,13 @@ NS_ASSUME_NONNULL_BEGIN
 #define UIColorHex(_hex_) [UIColor br_colorWithHexString:((__bridge NSString *)CFSTR(#_hex_))]
 #endif
 
+typedef enum  {
+    GradientTypeTopToBottom = 0,//从上到小
+    GradientTypeLeftToRight = 1,//从左到右
+    GradientTypeUpleftTolowRight = 2,//左上到右下
+    GradientTypeUprightTolowLeft = 3,//右上到左下
+}GradientType;
+
 @interface UIColor (LXAdd)
 
 /** 随机颜色 */
@@ -57,6 +64,17 @@ NS_ASSUME_NONNULL_BEGIN
  *  @return 渐变颜色
  */
 + (UIColor*)lx_gradientFromColor:(UIColor*)fromColor toColor:(UIColor*)toColor withHeight:(CGFloat)height;
+
+
+/**
+ 获取渐变色
+
+ @param colors 颜色集合
+ @param gradientType 渐变方向
+ @param frame frame
+ @return 渐变颜色
+ */
++ (UIColor *)lx_getGradientChangeColorFromColors:(NSArray*)colors ByGradientType:(GradientType)gradientType frame:(CGRect)frame;
 
 @end
 

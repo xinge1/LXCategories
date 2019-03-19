@@ -70,7 +70,7 @@ typedef NS_ENUM(NSUInteger, LXDirectionType) {
  *  @param offset 阴影偏移量
  *  @param radius 阴影半径
  */
-- (void)lx_setLayerShadow:(nullable UIColor*)color offset:(CGSize)offset radius:(CGFloat)radius;
+- (void)lx_setLayerShadow:(nullable UIColor*)color offset:(CGSize)offset radius:(CGFloat)radius opacity:(CGFloat)opacity;
 
 /** 删除所有子视图 */
 - (void)lx_removeAllSubviews;

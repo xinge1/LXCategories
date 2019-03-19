@@ -17,6 +17,14 @@ typedef NS_ENUM(NSUInteger, WYWatermarkDirection) {
     WYWatermarkDirectionCenter,         // 正中
 };
 
+/** 渐变颜色方向 */
+typedef enum  {
+    LXGradientTypeTopToBottom = 0,//从上到小
+    LXGradientTypeLeftToRight = 1,//从左到右
+    LXGradientTypeUpleftTolowRight = 2,//左上到右下
+    LXGradientTypeUprightTolowLeft = 3,//右上到左下
+}LXGradientType;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UIImage (LXAdd)
@@ -162,6 +170,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 /** 生成一张毛玻璃图片 */
 - (UIImage *)lx_blur:(UIImage*)theImage;
+
+
+/**
+ 生成一张渐变图片
+ */
++ (UIImage *)lx_getGradientChangeColorFromColors:(NSArray*)colors
+                                  ByGradientType:(LXGradientType)gradientType
+                                           frame:(CGRect)frame;
 
 @end
 

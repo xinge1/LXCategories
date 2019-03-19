@@ -54,6 +54,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - 修剪字符串（去掉头尾两边的空格和换行符）
 - (NSString *)lx_stringByTrim;
+/**
+ 去除多余的0
+ */
+-(NSString *)lx_removeFloatAllZero:(NSString*)string;
 
 @end
 

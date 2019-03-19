@@ -293,10 +293,10 @@ LXSYNTH_DUMMY_CLASS(UILabel_LXAdd)
          middlelineStr:(NSString * __nullable)middlelineStr
        middlelineColor:(UIColor * __nullable)middlelineColor{
     
-    if (!self.attributedString) {
+//    if (!self.attributedString) {
         self.attributedString = [[NSMutableAttributedString alloc]initWithString:self.text];
         [self.attributedString addAttribute:NSFontAttributeName value:self.font range:NSMakeRange(0,self.text.length)];
-    }
+//    }
     
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc]init];
     paragraphStyle.alignment=self.textAlignment;

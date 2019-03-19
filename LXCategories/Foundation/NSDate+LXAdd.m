@@ -301,6 +301,22 @@ LXSYNTH_DUMMY_CLASS(NSDate_LXAdd)
     return 0;   //时间相等
 }
 
++(BOOL)isDateInRangeWithCurrentDate:(NSDate *)currentDate
+                          startDate:(NSDate *)startDate
+                            endDate:(NSDate *)endDate{
+    BOOL isIn = NO;
+    
+    BOOL isLater = [currentDate isLaterThanDate:startDate];
+    BOOL isEarlier = [currentDate isEarlierThanDate:endDate];
+    
+    if (isLater && isEarlier) {
+        isIn = YES;
+    }
+    
+    return isIn;
+    
+}
+
 #pragma mark - 日期规则
 
 - (BOOL)isTypicallyWeekend
@@ -647,6 +663,21 @@ LXSYNTH_DUMMY_CLASS(NSDate_LXAdd)
     return date;
 }
 
+
+/**
+ 日期时间转换，毫秒级时间戳
+ NSTimeInterval -->NSDate
+ 
+ @param timeInterval 时间戳
+ @return 时间
+ */
++(NSDate *)lx_getDateWithTimeIntervalHaoMiao:(id)timeInterval{
+    
+    NSDate *date=[NSDate dateWithTimeIntervalSince1970:([timeInterval doubleValue]/1000.0)];
+    
+    return date;
+}
+
 /**
  日期时间转换，
  NSTimeInterval -->NSString
@@ -655,13 +686,30 @@ LXSYNTH_DUMMY_CLASS(NSDate_LXAdd)
  @param format timeStr的格式 如：YYYY-MM-dd HH:mm:ss
  @return NSDate
  */
-+(NSString *)lx_getDateStrWithTimeInterval:(id)timeInterval
-                                              format:(NSString *)format{
++(NSString *)lx_getDateStrWithTimeInterval:(nullable id)timeInterval
+                                    format:(NSString *)format{
     
     NSDate *date = [self lx_getDateWithTimeInterval:timeInterval];
     NSString *timeStr = [self lx_getDateStrWithDate:date format:format];
     return timeStr;
 
+}
+
+/**
+ 日期时间转换，毫秒级时间戳
+ NSTimeInterval -->NSString
+ 
+ @param timeInterval 毫秒级时间戳
+ @param format timeStr的格式 如：YYYY-MM-dd HH:mm:ss
+ @return NSDate
+ */
++(NSString *)lx_getDateStrWithTimeIntervalHaoMiao:(nullable id)timeInterval
+                                           format:(NSString *)format{
+    
+    NSDate *date = [self lx_getDateWithTimeIntervalHaoMiao:timeInterval];
+    NSString *timeStr = [self lx_getDateStrWithDate:date format:format];
+    return timeStr;
+    
 }
 
 /**

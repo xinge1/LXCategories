@@ -156,6 +156,11 @@ NS_ASSUME_NONNULL_BEGIN
 /** 判断一个指定的时间是否已经过了当前时间 */
 + (int)compareWithAnotherDay:(NSString *)anotherDay;
 
+/** 判断一个指定的时间是否在指定的时间范围内 */
++(BOOL)isDateInRangeWithCurrentDate:(NSDate *)currentDate
+                          startDate:(NSDate *)startDate
+                            endDate:(NSDate *)endDate;
+
 #pragma mark - 日期规则
 
 /** 是不是周六日 */
@@ -344,6 +349,15 @@ NS_ASSUME_NONNULL_BEGIN
 +(NSDate *)lx_getDateWithTimeInterval:(id)timeInterval;
 
 /**
+ 日期时间转换，毫秒级时间戳
+ NSTimeInterval -->NSDate
+ 
+ @param timeInterval 时间戳
+ @return 时间
+ */
++(NSDate *)lx_getDateWithTimeIntervalHaoMiao:(id)timeInterval;
+
+/**
  日期时间转换，
  NSTimeInterval -->NSString
  
@@ -351,8 +365,19 @@ NS_ASSUME_NONNULL_BEGIN
  @param format timeStr的格式 如：YYYY-MM-dd HH:mm:ss
  @return NSDate
  */
-+(NSString *)lx_getDateStrWithTimeInterval:(id)timeInterval
++(NSString *)lx_getDateStrWithTimeInterval:(nullable id)timeInterval
                                     format:(NSString *)format;
+
+/**
+ 日期时间转换，毫秒级时间戳
+ NSTimeInterval -->NSString
+ 
+ @param timeInterval 毫秒级时间戳
+ @param format timeStr的格式 如：YYYY-MM-dd HH:mm:ss
+ @return NSDate
+ */
++(NSString *)lx_getDateStrWithTimeIntervalHaoMiao:(nullable id)timeInterval
+                                           format:(NSString *)format;
 
 
 /**

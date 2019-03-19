@@ -326,4 +326,34 @@ LXSYNTH_DUMMY_CLASS(NSString_LXCommon)
     return [self stringByTrimmingCharactersInSet:set];
 }
 
+
+/**
+ 去除多余的0
+ */
+-(NSString*)lx_removeFloatAllZero:(NSString*)string{
+    
+    NSString * testNumber = string;
+    NSString * outNumber = [NSString stringWithFormat:@"%@",@(testNumber.floatValue)];
+    
+    //    价格格式化显示
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    formatter.numberStyle = kCFNumberFormatterDecimalStyle;
+    NSString *formatterString = [formatter stringFromNumber:[NSNumber numberWithFloat:[outNumber doubleValue]]];
+    
+    NSRange range = [formatterString rangeOfString:@"."]; //现获取要截取的字符串位置
+    
+    if (range.length>0) {
+        
+        NSString * result = [formatterString substringFromIndex:range.location]; //截取字符串
+        
+        if (result.length>=4) {
+            
+            formatterString=[formatterString substringToIndex:formatterString.length-1];
+        }
+        
+    }
+    
+    return formatterString;
+}
+
 @end
